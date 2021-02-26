@@ -1,0 +1,65 @@
+// KNN
+python main.py train -h5 data_training_phog_1.h5 -clsf knn -attr n=3
+python main.py train -h5 data_training_phog_2.h5 -clsf knn -attr n=3   
+python main.py train -h5 data_training_phog_3.h5 -clsf knn -attr n=3
+
+python main.py test -h5 data_testing_phog_1.h5 -md model-knn-n3-data_training_phog_1.joblib
+python main.py test -h5 data_testing_phog_2.h5 -md model-knn-n3-data_training_phog_2.joblib
+python main.py test -h5 data_testing_phog_3.h5 -md model-knn-n3-data_training_phog_3.joblib
+
+
+// SVM 1
+python main.py train -h5 data_training_phog_1.h5 -clsf svm -attr C=1.0 kernel=rbf t=0.00001
+python main.py train -h5 data_training_phog_2.h5 -clsf svm -attr C=1.0 kernel=rbf t=0.00001
+python main.py train -h5 data_training_phog_3.h5 -clsf svm -attr C=1.0 kernel=rbf t=0.00001
+
+python main.py test -h5 data_testing_phog_1.h5 -md model-svm-C1.0-rbf-tol1e-05-data_training_phog_1.joblib
+python main.py test -h5 data_testing_phog_2.h5 -md model-svm-C1.0-rbf-tol1e-05-data_training_phog_2.joblib
+python main.py test -h5 data_testing_phog_3.h5 -md model-svm-C1.0-rbf-tol1e-05-data_training_phog_3.joblib
+
+// SVM 2
+python main.py train -h5 data_training_phog_1.h5 -clsf svm -attr C=1.0 kernel=linear t=0.0001
+python main.py train -h5 data_training_phog_2.h5 -clsf svm -attr C=1.0 kernel=linear t=0.0001
+python main.py train -h5 data_training_phog_3.h5 -clsf svm -attr C=1.0 kernel=linear t=0.0001
+
+python main.py test -h5 data_testing_phog_1.h5 -md model-svm-C1.0-linear-tol0.0001-data_training_phog_1.joblib
+python main.py test -h5 data_testing_phog_2.h5 -md model-svm-C1.0-linear-tol0.0001-data_training_phog_2.joblib
+python main.py test -h5 data_testing_phog_3.h5 -md model-svm-C1.0-linear-tol0.0001-data_training_phog_3.joblib
+
+// SVM 3
+python main.py train -h5 data_training_phog_1.h5 -clsf svm -attr C=1.0 kernel=poly t=0.00001
+python main.py train -h5 data_training_phog_2.h5 -clsf svm -attr C=1.0 kernel=poly t=0.00001
+python main.py train -h5 data_training_phog_3.h5 -clsf svm -attr C=1.0 kernel=poly t=0.00001
+
+python main.py test -h5 data_testing_phog_1.h5 -md model-svm-C1.0-poly-tol1e-05-data_training_phog_1.joblib
+python main.py test -h5 data_testing_phog_2.h5 -md model-svm-C1.0-poly-tol1e-05-data_training_phog_2.joblib
+python main.py test -h5 data_testing_phog_3.h5 -md model-svm-C1.0-poly-tol1e-05-data_training_phog_3.joblib
+
+// SVM 4
+python main.py train -h5 data_training_phog_1.h5 -clsf svm -attr C=0.5 kernel=poly t=0.00001
+python main.py train -h5 data_training_phog_2.h5 -clsf svm -attr C=0.5 kernel=poly t=0.00001
+python main.py train -h5 data_training_phog_3.h5 -clsf svm -attr C=0.5 kernel=poly t=0.00001
+
+python main.py test -h5 data_testing_phog_1.h5 -md model-svm-C0.5-poly-tol1e-05-data_training_phog_1.joblib
+python main.py test -h5 data_testing_phog_2.h5 -md model-svm-C0.5-poly-tol1e-05-data_training_phog_2.joblib
+python main.py test -h5 data_testing_phog_3.h5 -md model-svm-C0.5-poly-tol1e-05-data_training_phog_3.joblib
+
+
+// SVM 5 Baru yang phog 3
+python main.py train -h5 data_training_phog_1.h5 -clsf svm -attr C=0.5 kernel=poly t=0.00001 coef0=0.5
+python main.py train -h5 data_training_phog_2.h5 -clsf svm -attr C=0.5 kernel=poly t=0.00001 coef0=0.5
+python main.py train -h5 data_training_phog_3.h5 -clsf svm -attr C=0.5 kernel=poly t=0.00001 coef0=0.5
+
+python main.py test -h5 data_testing_phog_1.h5 -md model-svm-C0.5-poly-tol1e-05-coef0.5-data_training_phog_1.joblib
+python main.py test -h5 data_testing_phog_2.h5 -md model-svm-C0.5-poly-tol1e-05-coef0.5-data_training_phog_2.joblib
+python main.py test -h5 data_testing_phog_3.h5 -md model-svm-C0.5-poly-tol1e-05-coef0.5-data_training_phog_3.joblib
+
+
+// SVM 6
+python main.py train -h5 data_training_phog_1.h5 -clsf svm -attr C=0.5 kernel=poly t=0.00001 coef0=1.0
+python main.py train -h5 data_training_phog_2.h5 -clsf svm -attr C=0.5 kernel=poly t=0.00001 coef0=1.0
+python main.py train -h5 data_training_phog_3.h5 -clsf svm -attr C=0.5 kernel=poly t=0.00001 coef0=1.0
+
+python main.py test -h5 data_testing_phog_1.h5 -md model-svm-C0.5-poly-tol1e-05-coef1.0-data_training_phog_1.joblib
+python main.py test -h5 data_testing_phog_2.h5 -md model-svm-C0.5-poly-tol1e-05-coef1.0-data_training_phog_2.joblib
+python main.py test -h5 data_testing_phog_3.h5 -md model-svm-C0.5-poly-tol1e-05-coef1.0-data_training_phog_3.joblib
